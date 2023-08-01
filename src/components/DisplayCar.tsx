@@ -120,37 +120,38 @@ export default function DisplayCar({props, setter}:{props:car[], setter:Function
                 </div>
             </div>
             {popup &&
-            <ClickAwayListener onClickAway={()=>setPopup(false)}>
-                <div className="popup">
-                    <div className="popup-inner">
-                        <h2>Změnit hodnotu</h2>
-                        <h3>{name}:</h3>
-                        <div className="flex">
-                            <p>{value}</p>
-                            <ArrowForwardOutlinedIcon className="icon"/>
-                            <input type="text" value={input} onChange={handleInput} autoFocus/>
+                <ClickAwayListener onClickAway={()=>setPopup(false)}>
+                    <div className="popup">
+                        <div className="popup-inner">
+                            <h2>Změnit hodnotu</h2>
+                            <h3>{name}:</h3>
+                            <div className="flex">
+                                <p>{value}</p>
+                                <ArrowForwardOutlinedIcon className="icon"/>
+                                <input type="text" value={input} onChange={handleInput} autoFocus/>
+                            </div>
+                            <button onClick={()=>
+                                {editProduct(setter, props, props[0].car_id, change, input);
+                                setPopup(false);
+                                setInput('');
+                                }} type='submit'>
+                                    <SaveOutlinedIcon /> ULOŽIT
+                                </button>
+                            <CloseOutlinedIcon className="close" onClick={()=>{setPopup(false);setInput('')}}/>
                         </div>
-                        <button onClick={()=>
-                            {editProduct(setter, props, props[0].car_id, change, input);
-                            setPopup(false);
-                            setInput('');
-                            }} type='submit'>
-                                <SaveOutlinedIcon /> ULOŽIT
-                            </button>
-                        <CloseOutlinedIcon className="close" onClick={()=>{setPopup(false);setInput('')}}/>
                     </div>
-                </div>
-            </ClickAwayListener>
+                </ClickAwayListener>
             }
+            
             {deletePop &&
-            <ClickAwayListener onClickAway={()=>setDeletePop(false)}>
-                <div className="del-pop">
-                    <p>Opravdu chcete smazat tento vůz:</p>
-                    <h3>{props[0].car_make} {props[0].car_model}</h3>
-                    <button onClick={handleDelete} className="delete"><DeleteOutlineOutlinedIcon />Odstranit auto</button>
-                    <CloseOutlinedIcon className="close" onClick={()=>setDeletePop(false)}/>
-                </div>
-            </ClickAwayListener>
+                <ClickAwayListener onClickAway={()=>setDeletePop(false)}>
+                    <div className="del-pop">
+                        <p>Opravdu chcete smazat tento vůz:</p>
+                        <h3>{props[0].car_make} {props[0].car_model}</h3>
+                        <button onClick={handleDelete} className="delete"><DeleteOutlineOutlinedIcon />Odstranit auto</button>
+                        <CloseOutlinedIcon className="close" onClick={()=>setDeletePop(false)}/>
+                    </div>
+                </ClickAwayListener>
             }
         </div>
     );
