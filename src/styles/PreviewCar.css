@@ -43,3 +43,16 @@
     font-size: 22px;
     font-weight: bold;
 }
+
+
+@media only screen and (max-width: 569px) {
+    .preview-car {
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr;
+        height: auto;
+    }
+
+    .preview-car .price {    
+        position: static;
+    }
+}

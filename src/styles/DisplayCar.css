@@ -34,12 +34,14 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    white-space: nowrap;
 }
 
 .display-car h1 {
     display: flex;
     align-items: center;
     gap: 10px;
+    white-space: nowrap;
 }
 
 .display-car span {
@@ -143,4 +145,19 @@
     gap: 16px;
 
     padding: 8px 16px;
+}
+
+
+@media only screen and (max-width: 689px) {
+    .display-car {
+        grid-template-columns: none;
+        grid-template-rows: auto auto;
+    }
+
+    .img {
+        order: 2;
+    }
+    .data {
+        order: 1;
+    }
 }
