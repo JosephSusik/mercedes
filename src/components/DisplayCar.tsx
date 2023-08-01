@@ -5,6 +5,7 @@ import ArrowForwardOutlinedIcon from '@mui/icons-material/ArrowForwardOutlined';
 import ClickAwayListener from '@mui/base/ClickAwayListener';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import SaveOutlinedIcon from '@mui/icons-material/SaveOutlined';
+import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 
 import { useState } from "react";
 import { deleteProduct, editProduct } from "@/lib/queries";
@@ -122,18 +123,21 @@ export default function DisplayCar({props, setter}:{props:car[], setter:Function
             <ClickAwayListener onClickAway={()=>setPopup(false)}>
                 <div className="popup">
                     <div className="popup-inner">
-                        <p>Změnit hodnotu</p>
+                        <h2>Změnit hodnotu</h2>
                         <h3>{name}:</h3>
                         <div className="flex">
                             <p>{value}</p>
                             <ArrowForwardOutlinedIcon className="icon"/>
-                            <input type="text" value={input} onChange={handleInput}/>
+                            <input type="text" value={input} onChange={handleInput} autoFocus/>
                         </div>
                         <button onClick={()=>
                             {editProduct(setter, props, props[0].car_id, change, input);
                             setPopup(false);
                             setInput('');
-                            }}><SaveOutlinedIcon /> ULOŽIT</button>
+                            }} type='submit'>
+                                <SaveOutlinedIcon /> ULOŽIT
+                            </button>
+                        <CloseOutlinedIcon className="close" onClick={()=>{setPopup(false);setInput('')}}/>
                     </div>
                 </div>
             </ClickAwayListener>
@@ -144,6 +148,7 @@ export default function DisplayCar({props, setter}:{props:car[], setter:Function
                     <p>Opravdu chcete smazat tento vůz:</p>
                     <h3>{props[0].car_make} {props[0].car_model}</h3>
                     <button onClick={handleDelete} className="delete"><DeleteOutlineOutlinedIcon />Odstranit auto</button>
+                    <CloseOutlinedIcon className="close" onClick={()=>setDeletePop(false)}/>
                 </div>
             </ClickAwayListener>
             }

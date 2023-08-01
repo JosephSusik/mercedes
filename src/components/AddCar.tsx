@@ -1,6 +1,7 @@
 import { car } from "@/interfaces/car"
 import { addProduct } from "@/lib/queries"
 import { useState } from "react"
+import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 
 export default function AddCar({setter, products,popupset}:{setter:Function, products:car[], popupset:Function}) {
     
@@ -101,6 +102,7 @@ export default function AddCar({setter, products,popupset}:{setter:Function, pro
                 />
             </div>
             <button onClick={handleAdd}>+ Přidat auto</button>
+            <CloseOutlinedIcon className="close" onClick={()=>popupset(false)}/>
         </div>
     )
 }
