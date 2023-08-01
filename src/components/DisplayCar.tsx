@@ -20,6 +20,13 @@ export default function DisplayCar({props, setter}:{props:car[], setter:Function
     const [input, setInput] = useState('');
     const [deletePop, setDeletePop] = useState(false);
 
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const goToSlide = (slideIndex: any) => {
+        setCurrentIndex(slideIndex);
+    };
+    
+
     let CzechCrown = new Intl.NumberFormat('cs-CZ', {
         style: 'currency',
         currency: 'CZK',
@@ -40,9 +47,19 @@ export default function DisplayCar({props, setter}:{props:car[], setter:Function
         <div className="display-car-wrapper">
             <div className="display-car">
                 <div className="img">
-                    <img src={'../../img/'+props[0].car_img[0]+'.jpg'} alt="" />
-                    <img src={'../../img/'+props[0].car_img[1]+'.jpg'} alt="" />
-                    <img src={'../../img/'+props[0].car_img[2]+'.jpg'} alt="" />
+                    <div className="big-img">
+                        <img src={'../../img/'+props[0].car_img[currentIndex]+'.jpg'} alt="" />
+                    </div>
+                    <div className="img-mini">                
+                        {props[0].car_img.map((id, index) => {
+                            return(
+                                <div onClick={()=>goToSlide(index)} className="img-mini-point">
+                                    <img src={'../../img/'+props[0].car_img[index]+'.jpg'} alt="" />
+                                </div>
+                            )
+                        })}
+                    </div>
+                    
                 </div>
                 <div className="data">
                     <h1>

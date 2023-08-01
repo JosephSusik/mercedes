@@ -15,6 +15,28 @@
 .display-car .img {
     display: flex;
     flex-direction: column;
+    width: 100%;
+}
+
+
+.img .big-img {
+    width: 100%;
+    height: 450px;
+}
+
+.img .img-mini {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 4px;
+}
+
+.img-mini-point:hover {
+    cursor: pointer;
+}
+
+.img .img-mini img {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .display-car .img img {
