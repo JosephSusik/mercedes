@@ -9,7 +9,6 @@ import SaveOutlinedIcon from '@mui/icons-material/SaveOutlined';
 import { useState } from "react";
 import { deleteProduct, editProduct } from "@/lib/queries";
 import Router from 'next/router';
-import { Save } from "@mui/icons-material";
 
 
 export default function DisplayCar({props, setter}:{props:car[], setter:Function}) {
