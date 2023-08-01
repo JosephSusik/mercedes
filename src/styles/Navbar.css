@@ -1,0 +1,31 @@
+nav {
+    height: 88px;
+    width: 100vw;
+
+    border-bottom: 1px solid black;
+
+    margin-bottom: 24px;
+    
+    display: flex;
+    justify-content: center;
+
+    background-color: black;
+    color: whitesmoke;
+}
+
+nav .navbar {
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    all: unset;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.navbar a:hover {
+    cursor: pointer;
+}

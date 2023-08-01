@@ -1,0 +1,61 @@
+.popup-car {
+    width: 80%;
+    height: 83vh;
+    background: white;
+    border-radius: 4px;
+
+    position: fixed;
+    z-index: 110;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    top:268px; 
+    left:50%; 
+    transform:translate(-50%, -25%);
+
+    border-radius: 2px;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    border: 1px solid black;
+
+    padding: 8px 16px;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    display: flex;
+}
+
+.add-car {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.add-car button {
+    all: unset;
+    background-color: #0078d6;
+    color: #FFFFFF;
+    padding: 4px 8px;
+    border-radius: 3px;
+    transition: all .2s linear;
+}
+
+.add-car button:hover {
+    background-color: #014880;
+    cursor: pointer;
+}
+
+.add-car .flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.add-car .flex p {
+    justify-self: end;
+}

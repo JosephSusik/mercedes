@@ -1,0 +1,146 @@
+.display-car-wrapper {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.display-car {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.display-car .img {
+    display: flex;
+    flex-direction: column;
+}
+
+.display-car .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.display-car .data {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.display-car p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.display-car h1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.display-car span {
+    display: flex;
+}
+
+.display-car .icon {
+    height: 20px;
+}
+
+.display-car .icon:hover {
+    cursor: pointer;
+}
+
+.popup {
+    width: auto;
+    height: auto;
+    background: white;
+    border-radius: 4px;
+
+    position: fixed;
+    z-index: 110;
+
+    top:40%; 
+    left:50%; 
+    transform:translate(-50%, -25%);
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.popup-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 12px;
+    padding: 10px;
+}
+
+.popup button {
+    all: unset;
+    background-color: #0078d6;
+    color: #FFFFFF;
+    padding: 4px 8px;
+    border-radius: 3px;
+    transition: all .2s linear;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.popup button:hover {
+    background-color: #014880;
+    cursor: pointer;
+}
+
+.flex {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.delete {
+    all: unset;
+    background: #d60000;
+    color: #FFFFFF;
+    padding: 4px 8px;
+    border-radius: 3px;
+    transition: all .2s linear;
+
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.delete:hover {
+    background-color: #800101;
+    cursor: pointer;
+}
+
+.del-pop {
+    width: auto;
+    height: auto;
+    background: white;
+    border-radius: 4px;
+
+    position: fixed;
+    z-index: 110;
+
+    top:40%; 
+    left:50%; 
+    transform:translate(-50%, -25%);
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    padding: 8px 16px;
+}

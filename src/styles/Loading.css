@@ -1,0 +1,10 @@
+.loading {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1
+}
+.loader {
+    color: #0078d6;
+}
